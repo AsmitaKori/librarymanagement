@@ -22,12 +22,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="secondAuthor" class="text-success">Second Author<h6 class="text-danger float-right">*</h6>
+            <label for="secondAuthor" class="text-success">Second Author
             </label>
             <input type="text" #secondAuthor="ngModel" ngModel name="secondAuthor" id="secondAuthor"
-                class="form-control" required placeholder="Enter secondAuthor name">
+                class="form-control"  placeholder="Enter secondAuthor name">
             <div *ngIf="secondAuthor.touched && secondAuthor.invalid">
-                <p class="alert alert-danger"> This field is required</p>
+               
             </div>
         </div>
 
