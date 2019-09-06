@@ -13,9 +13,11 @@ import { SearchBookComponent } from './search-book/search-book.component';
 import { RequestBookComponent } from './request-book/request-book.component';
 import { ReceiveBookComponent } from './receive-book/receive-book.component';
 import { ReturnBookComponent } from './return-book/return-book.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
+  {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'addLibrarian', component: AddLibrarianComponent},
   {path: 'updateLibrarian', component: UpdateLibrarianComponent},
