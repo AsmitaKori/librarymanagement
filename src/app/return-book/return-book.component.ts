@@ -8,12 +8,14 @@ import { UserServiceService } from '../user-service.service';
   styleUrls: ['./return-book.component.css']
 })
 export class ReturnBookComponent implements OnInit {
-
+  books = [];
+  id = null;
   constructor(private userService: UserServiceService) { }
 
   ngOnInit() {
   }
   return(book: NgForm) {
+    this.id = book.value.transactionId;
     this.userService.return(book.value.transactionId).subscribe(data => {
       if (data.message === 'Success') {
         console.log(data);

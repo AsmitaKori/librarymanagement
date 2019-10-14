@@ -18,4 +18,16 @@ export class ReceiveBookComponent implements OnInit {
       this.books = data.transactionList;
     });
   }
+  fine(table) {
+    this.userService.fine(table).subscribe(data => {
+      if (data.message === 'Success') {
+        console.log(data);
+        this.getbooks();
+        alert('paid the fine Successfully');
+      } else {
+        console.log(data);
+        alert('Failed To pay the fine');
+      }
+    });
+  }
 }

@@ -62,4 +62,7 @@ export class UserServiceService {
   return(data) {
     return this.http.delete<any>(`${this.librarianUrl}/returnBook/${data}`);
   }
+  fine(data) {
+    return this.http.delete<any>(`${this.librarianUrl}/payFine/${data.transactionId}`);
+  }
 }

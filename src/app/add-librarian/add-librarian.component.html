@@ -14,7 +14,7 @@
         <div class="form-group">
             <label for="emailId" class="text-success">Email<h6 class="text-danger float-right">*</h6></label>
             <input type="email" #emailId="ngModel" ngModel name="emailId" id="emailId" class="form-control"
-                required placeholder="Enter User Email">
+                required placeholder="Enter User Email" >
             <div *ngIf="emailId.touched && emailId.invalid">
                 <p class="alert alert-danger"> This field is required</p>
             </div>

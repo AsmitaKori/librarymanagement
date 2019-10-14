@@ -4,10 +4,11 @@
             <td>Transaction Id</td>
             <td>Registration Id</td>
             <td>Issue Date</td>
-            <td>Return Date</td>
+            <td>Expected Return Date</td>
             <td>Fine</td>
             <td>User Id</td>
             <td>Book Id</td>
+            <td>Pay Fine</td>
         </thead>
         <tbody>
             <tr *ngFor='let book of books'>
@@ -18,6 +19,7 @@
                 <td>{{book.fine}}</td>
                 <td>{{book.userId}}</td>
                 <td>{{book.bookId}}</td>
+                <td><button class="btn btn-outline-info" (click)="fine(book)">Pay</button></td>
             </tr>
         </tbody>
     </table>

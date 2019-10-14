@@ -6,10 +6,12 @@
         <div class="form-group">
             <label for="userId" class="text-success">User Id<h6 class="text-danger float-right">*</h6></label>
             <input type="number" #userId="ngModel" ngModel name="userId" id="userId" class="form-control" required
-                placeholder="Enter User Id">
+                placeholder="Enter User Id" min="3">
             <div *ngIf="userId.touched && userId.invalid">
-                <p class="alert alert-danger"> *This field is required</p>
+                <p class="alert alert-danger"> This field is required</p>
+                <p class="alert alert-danger"> Accepts atleast 4 digits</p>
             </div>
+        
         </div>
 
         <div class="form-group">
@@ -22,6 +24,6 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary float-right" [disabled]="login.invalid">Login </button>
+        <button type="submit" class="btn btn-primary float-right" [disabled]="loginForm.invalid">Login </button>
     </form>
 </div>

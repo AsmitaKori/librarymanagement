@@ -8,12 +8,10 @@ import { UserServiceService } from '../user-service.service';
   styleUrls: ['./add-librarian.component.css']
 })
 export class AddLibrarianComponent implements OnInit {
-  name = 'librarian';
   constructor(private userService: UserServiceService) { }
 
   ngOnInit() {
   }
-  
   librarian(addLibrarian: NgForm) {
     this.userService.addLibrarian(addLibrarian.value).subscribe(data => {
       if (data != null) {
