@@ -3,6 +3,14 @@
         <h1 class="bg-success text-light card" align="center">Update Librarian</h1>
         <h6 class="text-danger float-right">*Required Fields</h6>
         <div class="form-group">
+            <label for="userId" class="text-success">User Id<h6 class="text-danger float-right">*</h6></label>
+            <input type="text" #userId="ngModel" ngModel name="userId" id="userId" class="form-control" required>
+            <div *ngIf="userId.touched && userId.invalid">
+                <p class="alert alert-danger"> This field is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="userName" class="text-success">User Name<h6 class="text-danger float-right">*</h6></label>
             <input type="text" #userName="ngModel" ngModel name="userName" id="userName" class="form-control" required>
             <div *ngIf="userName.touched && userName.invalid">
@@ -11,20 +19,20 @@
         </div>
 
         <div class="form-group">
-            <label for="userEmail" class="text-success">Email<h6 class="text-danger float-right">*</h6></label>
-            <input type="email" #userEmail="ngModel" ngModel name="userEmail" id="userEmail" class="form-control"
+            <label for="emailId" class="text-success">Email<h6 class="text-danger float-right">*</h6></label>
+            <input type="email" #emailId="ngModel" ngModel name="emailId" id="emailId" class="form-control"
                 required>
-            <div *ngIf="userEmail.touched && userEmail.invalid">
+            <div *ngIf="emailId.touched && emailId.invalid">
                 <p class="alert alert-danger"> This field is required</p>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="userPassword" class="text-success">Password<h6 class="text-danger float-right">*</h6>
+            <label for="password" class="text-success">Password<h6 class="text-danger float-right">*</h6>
             </label>
-            <input type="password" #userPassword="ngModel" ngModel name="userPassword" id="userPassword"
+            <input type="password" #password="ngModel" ngModel name="password" id="password"
                 class="form-control" required>
-            <div *ngIf="userPassword.touched && userPassword.invalid">
+            <div *ngIf="password.touched && password.invalid">
                 <p class="alert alert-danger"> This field is required</p>
             </div>
         </div>

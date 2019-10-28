@@ -1,12 +1,12 @@
 <div class="col-md-5 offset-md-4 card card-body mt-5">
-    <form #addLibrarian="ngForm" (ngSubmit)="librarian(addLibrarian)">
-        <h1 class="bg-success text-light card" align="center">Add Librarian</h1>
+    <form #addUser="ngForm" (ngSubmit)="user(addUser)">
+        <h1 class="bg-success text-light card" align="center">Add user</h1>
         <h6 class="text-danger float-right">*Required Fields</h6>
-       
+        
         <div class="form-group">
             <label for="userName" class="text-success">Name<h6 class="text-danger float-right">*</h6></label>
             <input type="text" #userName="ngModel" ngModel name="userName" id="userName" class="form-control" required
-                placeholder="Enter librarian Name">
+                placeholder="Enter user Name">
             <div *ngIf="userName.touched && userName.invalid">
                 <p class="alert alert-danger"> This field is required</p>
             </div>
@@ -30,7 +30,7 @@
         </div>
         
        
-        <button type="submit" class="btn btn-success float-right" [disabled]="addLibrarian.invalid">Add</button>
+        <button type="submit" class="btn btn-success float-right" [disabled]="addUser.invalid">Add</button>
 
 
     </form>

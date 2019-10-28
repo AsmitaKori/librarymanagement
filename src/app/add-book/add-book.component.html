@@ -2,14 +2,6 @@
     <form #createBook="ngForm" (ngSubmit)="addBook(createBook)">
         <h1 class="bg-success text-light card" align="center">Add Book</h1>
         <h6 class="text-danger float-right">*Required Fields</h6>
-        <div class="form-group">
-            <label for="bookId" class="text-success">bookId<h6 class="text-danger float-right">*</h6></label>
-            <input type="number" #bookId="ngModel" ngModel name="bookId" id="bookId" class="form-control" required
-                placeholder="Enter Book id">
-            <div *ngIf="bookId.touched && bookId.invalid">
-                <p class="alert alert-danger"> *This field is required</p>
-            </div>
-        </div>
 
         <div class="form-group">
             <label for="bookName" class="text-success">Name<h6 class="text-danger float-right">*</h6></label>
@@ -21,49 +13,41 @@
         </div>
 
         <div class="form-group">
-            <label for="author1" class="text-success">author1<h6 class="text-danger float-right">*</h6>
-                </label>
-            <input type="text" #author1="ngModel" ngModel name="author1" id="author1"
-                class="form-control" required placeholder="Enter author1 name">
-            <div *ngIf="author1.touched && author1.invalid">
+            <label for="firstAuthor" class="text-success">first Author<h6 class="text-danger float-right">*</h6>
+            </label>
+            <input type="text" #firstAuthor="ngModel" ngModel name="firstAuthor" id="firstAuthor" class="form-control"
+                required placeholder="Enter firstAuthor name">
+            <div *ngIf="firstAuthor.touched && firstAuthor.invalid">
                 <p class="alert alert-danger"> This field is required</p>
             </div>
         </div>
         <div class="form-group">
-            <label for="author2" class="text-success">author2<h6 class="text-danger float-right">*</h6>
-                </label>
-            <input type="text" #author2="ngModel" ngModel name="author2" id="author2"
-                class="form-control" required placeholder="Enter author2 name">
-            <div *ngIf="author2.touched && author2.invalid">
+            <label for="secondAuthor" class="text-success">Second Author<h6 class="text-danger float-right">*</h6>
+            </label>
+            <input type="text" #secondAuthor="ngModel" ngModel name="secondAuthor" id="secondAuthor"
+                class="form-control" required placeholder="Enter secondAuthor name">
+            <div *ngIf="secondAuthor.touched && secondAuthor.invalid">
                 <p class="alert alert-danger"> This field is required</p>
             </div>
         </div>
-       
 
+
+        <div class="form-group">
+            <label for="yearOfPublication" class="text-success">Year Of Publication<h6 class="text-danger float-right">*
+                </h6>
+            </label>
+            <input type="number" #yearOfPublication="ngModel" ngModel name="yearOfPublication" id="yearOfPublication"
+                class="form-control" required placeholder="Enter yearOfPublication name">
+            <div *ngIf="yearOfPublication.touched && yearOfPublication.invalid">
+                <p class="alert alert-danger"> This field is required</p>
+            </div>
+        </div>
         <div class="form-group">
             <label for="publisher" class="text-success">publisher<h6 class="text-danger float-right">*</h6>
-                </label>
-            <input type="text" #publisher="ngModel" ngModel name="publisher" id="publisher" class="form-control"
-                required placeholder="Enter publisher name">
+            </label>
+            <input type="text" #publisher="ngModel" ngModel name="publisher" id="publisher"
+                class="form-control" required placeholder="Enter publisher name">
             <div *ngIf="publisher.touched && publisher.invalid">
-                <p class="alert alert-danger"> This field is required</p>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="yearOfPublication" class="text-success">yearOfPublication<h6 class="text-danger float-right">*</h6></label>
-            <input type="number" #yearOfPublication="ngModel" ngModel name="yearOfPublication" id="yearOfPublication" class="form-control" required
-                placeholder="Enter yearOfPublication">
-            <div *ngIf="yearOfPublication.touched && yearOfPublication.invalid">
-                <p class="alert alert-danger"> This field is required</p>
-            </div>
-        </div>
-        
-        <div class="form-group">
-            <label for="yearOfPublication" class="text-success">yearOfPublication<h6 class="text-danger float-right">*</h6></label>
-            <input type="number" #yearOfPublication="ngModel" ngModel name="yearOfPublication" id="yearOfPublication" class="form-control" required
-                placeholder="Enter number of book">
-            <div *ngIf="yearOfPublication.touched && yearOfPublication.invalid">
                 <p class="alert alert-danger"> This field is required</p>
             </div>
         </div>

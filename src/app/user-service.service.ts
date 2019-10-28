@@ -5,72 +5,40 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserServiceService {
-  avail: any = null;
-  backendUrl = 'http://localhost:8080/librarymanagementsystem/user';
-  ownerUrl = 'http://localhost:8080/librarymanagementsystem/owner';
-  userUrl = 'http://localhost:8080/librarymanagementsystem/enjoyer';
+  adminUrl = 'http://localhost:8081/admin';
+  librarianUrl = 'http://localhost:8081/librarian';
+  userUrl = 'http://localhost:8080/librarymanagementsystem/user';
 
   constructor(private http: HttpClient) { }
-  login(data) {
-    console.log('login');
-    return this.http.post<any>(`${this.backendUrl}/add`, data);
-  }
-  removeOwner(data) {
-    return this.http.delete(`${this.backendUrl}/deleteOwner/${data}`);
+  addLibrarian(data) {
+    return this.http.post<any>(`${this.adminUrl}/addLibrarian`, data);
   }
   updateLibrarian(data) {
-    return this.http.put<any>(`${this.userUrl}/update`, data);
+    return this.http.post<any>(`${this.adminUrl}/updateLibrarian`, data);
+  }
+
+  showAllLibrarians() {
+    return this.http.get<any>(`${this.adminUrl}/showLibrarians`);
   }
   deleteLibrarian(data) {
-    return this.http.delete(`${this.backendUrl}/deleteLibrarian/${data}`);
-  }
-  getAllLibrarian() {
-    return this.http.get<any>(`${this.backendUrl}/getAllLibrarian`);
-  }
-  getAllCustomer() {
-    return this.http.get<any>(`${this.backendUrl}/getAllCustomer`);
+    return this.http.delete<any>(`${this.adminUrl}/deleteLibrarian/${data}`);
   }
   addBook(data) {
-    return this.http.post(`${this.ownerUrl}/addBook`, data);
+    return this.http.post<any>(`${this.librarianUrl}/addBook`, data);
   }
-  updateBook(data) {
-    return this.http.put(`${this.ownerUrl}/updateBook`, data);
+  getAllBooks() {
+    return this.http.get<any>(`${this.librarianUrl}/getAllBooks`);
   }
-  deleteBus(data) {
-    return this.http.delete(`${this.ownerUrl}/deleteBus/${data}`);
+  getIssueBooks() {
+    return this.http.get<any>(`${this.librarianUrl}/getIssueBooks`);
   }
-  getAllTickets() {
-    return this.http.get<any>(`${this.ownerUrl}/getAllTicket`);
+  deleteBook(data) {
+    return this.http.delete<any>(`${this.librarianUrl}/deleteBook/${data}`);
   }
-  setAvaliability(data) {
-    console.log(data);
-    return this.http.post(`${this.ownerUrl}/setAvaliability`, data);
+  showAllUsers() {
+    return this.http.get<any>(`${this.librarianUrl}/showAllUsers`);
   }
-  getAllFeedbacks() {
-    return this.http.get<any>(`${this.ownerUrl}/getFeedback`);
-  }
-  showAllBus() {
-    return this.http.get<any>(`${this.ownerUrl}/getAllBus`);
-  }
-  chechAvail(data) {
-    return this.http.get<any>(`${this.userUrl}/checkAvailability/${data.startingPoint}/${data.endingPoint}/${data.availableDate}`);
-  }
-  bookTicket(data) {
-    return this.http.post<any>(`${this.userUrl}/bookTicket`, data);
-  }
-  availa() {
-    return this.avail = true;
-  }
-  viewTicket(data) {
-    return this.http.get<any>(`${this.userUrl}/getTicket/${data.bookingId}`);
-  }
-  updateUser(data) {
-    return this.http.put<any>(`${this.userUrl}/update`, data);
-  }
-  cancelTicket(data) {
-    return this.http.delete<any>(`${this.userUrl}/deleteTicket/${data.bookingId}`);
-  }
-  giveFeedback(data) {
-    return this.http.post<any>(`${this.userUrl}/giveFeedback`, data);
+  addUser(data) {
+    return this.http.post<any>(`${this.librarianUrl}/addUser`, data);
   }
 }

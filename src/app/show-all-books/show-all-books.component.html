@@ -1,1 +1,22 @@
-<p>show-all-books works!</p>
+<div class="col-md-9 offset-md-2 card card-body mt-3">
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="bg-info">
+            <td>Book Id</td>
+            <td>Book Name</td>
+            <td>First Author</td>
+            <td>Second Author</td>
+            <td>Year Of Publication</td>
+            <td>Publisher</td>
+        </thead>
+        <tbody>
+            <tr *ngFor='let book of books'>
+                <td>{{book.bookId}}</td>
+                <td>{{book.bookName}}</td>
+                <td>{{book.firstAuthor}}</td>
+                <td>{{book.secondAuthor}}</td>
+                <td>{{book.yearOfPublication}}</td>
+                <td>{{book.publisher}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

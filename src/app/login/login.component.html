@@ -1,11 +1,12 @@
 <div class="col-md-5 offset-md-4 card card-body mt-5">
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-        <h1 class="bg-info text-light card" align="center">Login </h1>
+        
+        <h1 class="bg-info text-light card" align="center">Login Form..!</h1>
         <h6 class="text-danger float-right">*Required Fields</h6>
         <div class="form-group">
-            <label for="userId" class="text-success">Id<h6 class="text-danger float-right">*</h6></label>
+            <label for="userId" class="text-success">User Id<h6 class="text-danger float-right">*</h6></label>
             <input type="number" #userId="ngModel" ngModel name="userId" id="userId" class="form-control" required
-                placeholder="Enter Id">
+                placeholder="Enter User Id">
             <div *ngIf="userId.touched && userId.invalid">
                 <p class="alert alert-danger"> *This field is required</p>
             </div>
@@ -17,7 +18,13 @@
             <input type="password" #userPassword="ngModel" ngModel name="userPassword" id="userPassword"
                 class="form-control" required placeholder="Enter User Password">
             <div *ngIf="userPassword.touched && userPassword.invalid">
+            <label for="password" class="text-success">User Password<h6 class="text-danger float-right">*</h6>
+            </label>
+            <input type="password" #password="ngModel" ngModel name="password" id="password"
+                class="form-control" required placeholder="Enter User Password">
+            <div *ngIf="password.touched && password.invalid">
                 <p class="alert alert-danger"> This field is required</p>
+            </div>
             </div>
         </div>
         <button type="submit" class="btn btn-primary float-right" [disabled]="login.invalid">Login </button>
