@@ -18,8 +18,8 @@ export class LoginServiceService {
       return false;
     }
   }
-  isLibrarianLoggedI() {
-    if (this.isLibrarianLoggedI) {
+  isLibrarianLogIn() {
+    if (this.isLibrarianLoggedIn) {
       return true;
     } else {
       return false;
