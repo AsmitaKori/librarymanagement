@@ -1,1 +1,24 @@
-<p>get-issued-booklist works!</p>
+<div class="col-md-9 offset-md-2 card card-body mt-3">
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="bg-info">
+            <td>Transaction Id</td>
+            <td>Registration Id</td>
+            <td>Issue Date</td>
+            <td>Return Date</td>
+            <td>Fine</td>
+            <td>User Id</td>
+            <td>Book Id</td>
+        </thead>
+        <tbody>
+            <tr *ngFor='let book of books'>
+                <td>{{book.transactionId}}</td>
+                <td>{{book.registrationId}}</td>
+                <td>{{book.issueDate | date}}</td>
+                <td>{{book.returnDate | date}}</td>
+                <td>{{book.fine}}</td>
+                <td>{{book.userId}}</td>
+                <td>{{book.bookId}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

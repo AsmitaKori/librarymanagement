@@ -9,7 +9,7 @@ export class LoginServiceService {
   isAdminLoggedIn = false;
   isLibrarianLoggedIn = false;
   isUserLoggedIn = false;
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   isAdminLogin() {
     if (this.isAdminLoggedIn) {

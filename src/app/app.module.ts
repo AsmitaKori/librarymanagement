@@ -15,13 +15,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchBookComponent } from './search-book/search-book.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { DeleteBookComponent } from './delete-book/delete-book.component';
-import { UpdateBookComponent } from './update-book/update-book.component';
 import { ShowAllBooksComponent } from './show-all-books/show-all-books.component';
 import { IssueBookComponent } from './issue-book/issue-book.component';
 import { GetIssuedBooklistComponent } from './get-issued-booklist/get-issued-booklist.component';
 import { RequestBookComponent } from './request-book/request-book.component';
 import { ReceiveBookComponent } from './receive-book/receive-book.component';
 import { ReturnBookComponent } from './return-book/return-book.component';
+import { GetAllLibrarianComponent } from './get-all-librarian/get-all-librarian.component';
+import { ShowAllUsersComponent } from './show-all-users/show-all-users.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +37,15 @@ import { ReturnBookComponent } from './return-book/return-book.component';
     SearchBookComponent,
     AddBookComponent,
     DeleteBookComponent,
-    UpdateBookComponent,
     ShowAllBooksComponent,
     IssueBookComponent,
     GetIssuedBooklistComponent,
     RequestBookComponent,
     ReceiveBookComponent,
-    ReturnBookComponent
+    ReturnBookComponent,
+    GetAllLibrarianComponent,
+    ShowAllUsersComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

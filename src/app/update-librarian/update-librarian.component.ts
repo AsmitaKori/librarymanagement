@@ -14,14 +14,14 @@ export class UpdateLibrarianComponent implements OnInit {
   ngOnInit() {
   }
   user(updateLibrarian: NgForm) {
-    this.userService.updateLibrarian(updateLibrarian.value).subscribe(bus => {
-      this.librarian = bus;
-      if (bus.message === 'Success') {
-        console.log(bus);
+    this.userService.updateLibrarian(updateLibrarian.value).subscribe(lib => {
+      this.librarian = lib;
+      if (lib.message === 'Success') {
+        console.log(lib);
         alert('librarian Updated Successfully');
         updateLibrarian.reset();
       } else {
-        console.log(bus);
+        console.log(lib);
         alert('Failed To Update librarian');
         updateLibrarian.reset();
       }

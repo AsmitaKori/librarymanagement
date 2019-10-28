@@ -13,12 +13,12 @@ export class AddLibrarianComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   librarian(addLibrarian: NgForm) {
-
-    this.userService.login(addLibrarian.value).subscribe(data => {
+    this.userService.addLibrarian(addLibrarian.value).subscribe(data => {
       if (data != null) {
         console.log(data);
-        alert('Librarian Added Successfully');
+        alert('Librarian Added Successfully id is ' + `${data.user.userId}`);
         addLibrarian.reset();
       } else {
         console.log(data);

@@ -15,7 +15,7 @@ export class AddBookComponent implements OnInit {
   }
   addBook(createBook: NgForm) {
     this.usrService.addBook(createBook.value).subscribe(book => {
-      if (book != null) {
+      if (book.book != null) {
         console.log(book);
         alert('Book Added Successfully');
         createBook.reset();

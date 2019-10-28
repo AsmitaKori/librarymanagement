@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-get-issued-booklist',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./get-issued-booklist.component.css']
 })
 export class GetIssuedBooklistComponent implements OnInit {
-
-  constructor() { }
+  books = [];
+  constructor(private userService: UserServiceService) {this.getbooks(); }
 
   ngOnInit() {
   }
-
+  getbooks() {
+    this.userService.getIssueBooks().subscribe(data => {
+      console.log(data);
+      this.books = data.transactionList;
+    });
+  }
 }

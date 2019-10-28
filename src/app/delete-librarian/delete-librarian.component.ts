@@ -8,31 +8,21 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./delete-librarian.component.css']
 })
 export class DeleteLibrarianComponent implements OnInit {
-  constructor(private userService: UserServiceService) { this.getAllLibrarian(); }
-  librarian: any[] = [];
+  constructor(private userService: UserServiceService) {}
   ngOnInit() {
   }
-  remove(id: NgForm) {
+  delete(id: NgForm) {
     this.userService.deleteLibrarian(id.value.userId).subscribe(data => {
-      if (data != null) {
+      if (data.message === 'Success') {
         console.log(data);
-        alert('User Deleted Succesfully');
+        alert('librarian deleted Successfully');
         id.reset();
-        this.getAllLibrarian();
       } else {
         console.log(data);
-        alert('Failed TO Delete Owner');
+        alert('Failed To delete librarian');
         id.reset();
       }
     });
   }
-  getAllLibrarian() {
-    this.userService.getAllLibrarian().subscribe(data => {
-      console.log(data);
-      this.librarian = data.userList;
-    }
-    );
-  }
-
 }
 

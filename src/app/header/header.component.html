@@ -15,6 +15,9 @@
                 <a class="nav-link" routerLink="addLibrarian">Add Librarian </a>
             </li>
             <li class="nav-item active" *ngIf="isAdminLogin">
+                <a class="nav-link" routerLink="getAllLibrarian">Get All Librarian</a>
+            </li>
+            <li class="nav-item active" *ngIf="isAdminLogin">
                 <a class="nav-link" routerLink="updateLibrarian">Update Librarian </a>
             </li>
             <li class="nav-item active" *ngIf="isAdminLogin">
@@ -24,10 +27,13 @@
                     <a class="nav-link" routerLink="addBook">Add Book </a>
                 </li>
                 <li class="nav-item active" *ngIf="isLibrarianLogin">
-                    <a class="nav-link" routerLink="updateBook">Update Book </a>
+                    <a class="nav-link" routerLink="addUser">Add User </a>
                 </li>
                 <li class="nav-item active" *ngIf="isLibrarianLogin">
                     <a class="nav-link" routerLink="deleteBook">Delete Book </a>
+                </li>
+                <li class="nav-item active" *ngIf="isLibrarianLogin">
+                    <a class="nav-link" routerLink="showAllUsers">Show all Users </a>
                 </li>
                 <li class="nav-item active" *ngIf="isLibrarianLogin">
                     <a class="nav-link" routerLink="showAllBooks">Show all Books </a>

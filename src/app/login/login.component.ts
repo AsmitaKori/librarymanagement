@@ -16,10 +16,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   login(loginForm: NgForm) {
-
     console.log(loginForm.value);
-    console.log('yashu');
-    this.http.post<any>(`http://localhost:8080/login`, loginForm.value).subscribe(data => {
+    this.http.post<any>(`http://localhost:8081/login`, loginForm.value).subscribe(data => {
       console.log(data.user.type);
       this.users = data.user;
       if (data.user.type === 'lib') {

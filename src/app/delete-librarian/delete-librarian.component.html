@@ -1,25 +1,3 @@
-<div class="col-md-8 offset-md-2 card card-body mt-5">
-    <table class="table table-bordered table-hover table-striped">
-        <thead class="bg-success">
-            <td>Librarian Id</td>
-            <td>User Name</td>
-            <td>User Email</td>
-            <td>User Password</td>
-            <td>User Mobile</td>
-            <td>Type</td>
-        </thead>
-        <tbody>
-            <tr *ngFor='let Librarian of librarians'>
-                <td>{{owner.userId}}</td>
-                <td>{{owner.userName}}</td>
-                <td>{{owner.userEmail}}</td>
-                <td>{{owner.userPassword}}</td>
-                <td>{{owner.userMobile}}</td>
-                <td>{{owner.type}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 <div class="col-md-5 offset-md-4 card card-body mt-5">
     <form #deleteLibrarian="ngForm" (ngSubmit)="delete(deleteLibrarian)">
         <h1 class="bg-info text-light card" align="center">Delete Librarian</h1>
