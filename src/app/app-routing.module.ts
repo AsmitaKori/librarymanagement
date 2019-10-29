@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { GetAllLibrarianComponent } from './get-all-librarian/get-all-librarian.component';
 import { ShowAllUsersComponent } from './show-all-users/show-all-users.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { RequestedListComponent } from './requested-list/requested-list.component';
 
 
 
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path: 'returnBook', component: ReturnBookComponent},
   {path: 'getAllLibrarian', component: GetAllLibrarianComponent},
   {path: 'showAllUsers', component: ShowAllUsersComponent},
-  {path: 'addUser', component: AddUserComponent}
+  {path: 'addUser', component: AddUserComponent},
+  {path: 'requestedList', component: RequestedListComponent}
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-receive-book',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./receive-book.component.css']
 })
 export class ReceiveBookComponent implements OnInit {
-
-  constructor() { }
+  books = [];
+  constructor(private userService: UserServiceService) {this.getbooks(); }
 
   ngOnInit() {
   }
-
+  getbooks() {
+    this.userService.recieveBook().subscribe(data => {
+      console.log(data);
+      this.books = data.transactionList;
+    });
+  }
 }

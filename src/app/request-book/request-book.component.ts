@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-request-book',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestBookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserServiceService) { }
 
   ngOnInit() {
   }
-
+  request(requestBook: NgForm) {
+    this.userService.requestBook(requestBook.value.bookId).subscribe(data => {
+      if (data.message === 'Success') {
+        console.log(data);
+        alert('Book Requested Successfully');
+        requestBook.reset();
+      } else {
+        console.log(data);
+        alert('Failed To Request Book');
+        requestBook.reset();
+      }
+    });
+  }
 }

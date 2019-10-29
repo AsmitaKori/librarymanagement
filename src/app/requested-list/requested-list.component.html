@@ -1,23 +1,21 @@
 <div class="col-md-9 offset-md-2 card card-body mt-3">
     <table class="table table-bordered table-hover table-striped">
         <thead class="bg-info">
-            <td>Transaction Id</td>
             <td>Registration Id</td>
-            <td>Issue Date</td>
-            <td>Return Date</td>
-            <td>Fine</td>
-            <td>User Id</td>
             <td>Book Id</td>
+            <td>Registration Date</td>
+            <td>User Id</td>
+            <td>Accept</td>
+            <td>Reject</td>
         </thead>
         <tbody>
             <tr *ngFor='let book of books'>
-                <td>{{book.transactionId}}</td>
                 <td>{{book.registrationId}}</td>
-                <td>{{book.issueDate | date}}</td>
-                <td>{{book.returnDate | date}}</td>
-                <td>{{book.fine}}</td>
-                <td>{{book.userId}}</td>
                 <td>{{book.bookId}}</td>
+                <td>{{book.registrationDate | date}}</td>
+                <td>{{book.userId}}</td>
+                <td><button class="btn btn-outline-info" (click)="accept(book)">Accept</button></td>
+                <td><button class="btn btn-outline-primary" (click)="reject(book)">Reject</button></td>
             </tr>
         </tbody>
     </table>

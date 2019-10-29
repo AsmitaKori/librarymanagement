@@ -1,1 +1,15 @@
-<p>request-book works!</p>
+<div class="col-md-5 offset-md-4 card card-body mt-5">
+    <form #requestBook="ngForm" (ngSubmit)="request(requestBook)">
+        <h1 class="bg-info text-light card" align="center">Request Book</h1>
+        <h6 class="text-danger float-right">*Required Field</h6>
+        <div class="form-group">
+            <label class="text-success" for="bookId">Book Id<h6 class="text-danger float-right">*</h6></label>
+            <input type="number" #bookId="ngModel" ngModel name="bookId" id="bookId" class="form-control" required
+                placeholder="Enter Book Id to request">
+            <div *ngIf="bookId.touched && bookId.invalid">
+                <p class="alert alert-danger"> *This field is required</p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary float-right" [disabled]="requestBook.invalid">Request</button>
+    </form>
+</div>

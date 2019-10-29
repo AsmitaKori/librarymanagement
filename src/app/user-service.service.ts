@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserServiceService {
   adminUrl = 'http://localhost:8081/admin';
   librarianUrl = 'http://localhost:8081/librarian';
-  userUrl = 'http://localhost:8080/librarymanagementsystem/user';
+  userUrl = 'http://localhost:8081/user';
 
   constructor(private http: HttpClient) { }
   addLibrarian(data) {
@@ -40,5 +40,23 @@ export class UserServiceService {
   }
   addUser(data) {
     return this.http.post<any>(`${this.librarianUrl}/addUser`, data);
+  }
+  searchBook(data) {
+    return this.http.get<any>(`${this.userUrl}/searchBooks/${ data}`);
+  }
+  requestBook(data) {
+    return this.http.post<any>(`${this.userUrl}/requestBook`, data);
+  }
+  recieveBook() {
+    return this.http.get<any>(`${this.userUrl}/getRecievedBooks`);
+  }
+  requestList() {
+    return this.http.get<any>(`${this.librarianUrl}/getRequestList`);
+  }
+  accept(data) {
+    return this.http.post<any>(`${this.librarianUrl}/toIssueBook/${data.registrationId}/${data.userId}`, data);
+  }
+  reject(data) {
+    return this.http.delete<any>(`${this.librarianUrl}/toRejectRequest/${data.registrationId}`, data);
   }
 }

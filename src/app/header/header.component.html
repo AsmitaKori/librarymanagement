@@ -10,7 +10,7 @@
             <li class="nav-item active" *ngIf="!isAdminLogin && !isLibrarianLogin && !isUserLogin">
                 <a class="nav-link" routerLink="login">Login </a>
             </li>
-           
+
             <li class="nav-item active" *ngIf="isAdminLogin">
                 <a class="nav-link" routerLink="addLibrarian">Add Librarian </a>
             </li>
@@ -22,37 +22,40 @@
             </li>
             <li class="nav-item active" *ngIf="isAdminLogin">
                 <a class="nav-link" routerLink="deleteLibrarian">Delete Librarian </a>
-            
-                <li class="nav-item active" *ngIf="isLibrarianLogin">
-                    <a class="nav-link" routerLink="addBook">Add Book </a>
-                </li>
-                <li class="nav-item active" *ngIf="isLibrarianLogin">
-                    <a class="nav-link" routerLink="addUser">Add User </a>
-                </li>
-                <li class="nav-item active" *ngIf="isLibrarianLogin">
-                    <a class="nav-link" routerLink="deleteBook">Delete Book </a>
-                </li>
-                <li class="nav-item active" *ngIf="isLibrarianLogin">
-                    <a class="nav-link" routerLink="showAllUsers">Show all Users </a>
-                </li>
-                <li class="nav-item active" *ngIf="isLibrarianLogin">
-                    <a class="nav-link" routerLink="showAllBooks">Show all Books </a>
-                </li>
-                <li class="nav-item active" *ngIf="isLibrarianLogin">
-                    <a class="nav-link" routerLink="getIssuedBookList"> Issued BookList </a>
-                </li>
-                <li class="nav-item active" *ngIf="isUserLogin">
-                    <a class="nav-link" routerLink="searchBook">Search Book</a>
-                </li>
-                <li class="nav-item active" *ngIf="isUserLogin">
-                    <a class="nav-link" routerLink="requestBook">Request Book</a>
-                </li>
-                <li class="nav-item active" *ngIf="isUserLogin">
-                    <a class="nav-link" routerLink="receiveBook">Receive Book</a>
-                </li>
-                <li class="nav-item active" *ngIf="isUserLogin">
-                    <a class="nav-link" routerLink="returnBook">Return Book</a>
-                </li>
+
+            <li class="nav-item active" *ngIf="isLibrarianLogin">
+                <a class="nav-link" routerLink="addBook">Add Book </a>
+            </li>
+            <li class="nav-item active" *ngIf="isLibrarianLogin">
+                <a class="nav-link" routerLink="addUser">Add User </a>
+            </li>
+            <li class="nav-item active" *ngIf="isLibrarianLogin">
+                <a class="nav-link" routerLink="deleteBook">Delete Book </a>
+            </li>
+            <li class="nav-item active" *ngIf="isLibrarianLogin">
+                <a class="nav-link" routerLink="showAllUsers">Show all Users </a>
+            </li>
+            <li class="nav-item active" *ngIf="isLibrarianLogin">
+                <a class="nav-link" routerLink="showAllBooks">Show all Books </a>
+            </li>
+            <li class="nav-item active" *ngIf="isLibrarianLogin">
+                <a class="nav-link" routerLink="getIssuedBookList"> Issued BookList </a>
+            </li>
+            <li class="nav-item active" *ngIf="isLibrarianLogin">
+                <a class="nav-link" routerLink="requestedList"> Requested BookList </a>
+            </li>
+            <li class="nav-item active" *ngIf="isUserLogin">
+                <a class="nav-link" routerLink="searchBook">Search Book</a>
+            </li>
+            <li class="nav-item active" *ngIf="isUserLogin">
+                <a class="nav-link" routerLink="requestBook">Request Book</a>
+            </li>
+            <li class="nav-item active" *ngIf="isUserLogin">
+                <a class="nav-link" routerLink="receiveBook">Received Books</a>
+            </li>
+            <li class="nav-item active" *ngIf="isUserLogin">
+                <a class="nav-link" routerLink="returnBook">Return Book</a>
+            </li>
         </ul>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active" *ngIf="isAdminLogin || isLibrarianLogin || isUserLogin">

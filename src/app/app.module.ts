@@ -24,6 +24,7 @@ import { ReturnBookComponent } from './return-book/return-book.component';
 import { GetAllLibrarianComponent } from './get-all-librarian/get-all-librarian.component';
 import { ShowAllUsersComponent } from './show-all-users/show-all-users.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { RequestedListComponent } from './requested-list/requested-list.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     ReturnBookComponent,
     GetAllLibrarianComponent,
     ShowAllUsersComponent,
-    AddUserComponent
+    AddUserComponent,
+    RequestedListComponent
   ],
   imports: [
     BrowserModule,
