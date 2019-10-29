@@ -1,1 +1,15 @@
-<p>return-book works!</p>
+<div class="col-md-5 offset-md-4 card card-body mt-5">
+    <form #returnBook="ngForm" (ngSubmit)="return(returnBook)">
+        <h1 class="bg-info text-light card" align="center">Return Book</h1>
+        <h6 class="text-danger float-right">*Required Field</h6>
+        <div class="form-group">
+            <label class="text-success" for="transactionId">Transaction Id<h6 class="text-danger float-right">*</h6></label>
+            <input type="number" #transactionId="ngModel" ngModel name="transactionId" id="transactionId" class="form-control" required
+                placeholder="Enter transaction Id to delete">
+            <div *ngIf="transactionId.touched && transactionId.invalid">
+                <p class="alert alert-danger"> *This field is required</p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary float-right" [disabled]="returnBook.invalid">Return</button>
+    </form>
+</div>

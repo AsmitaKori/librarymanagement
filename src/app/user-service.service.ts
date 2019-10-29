@@ -59,4 +59,7 @@ export class UserServiceService {
   reject(data) {
     return this.http.delete<any>(`${this.librarianUrl}/toRejectRequest/${data.registrationId}`, data);
   }
+  return(data) {
+    return this.http.delete<any>(`${this.librarianUrl}/returnBook/${data}`);
+  }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-return-book',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReturnBookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserServiceService) { }
 
   ngOnInit() {
   }
-
+  return(book: NgForm) {
+    this.userService.return(book.value.transactionId).subscribe(data => {
+      if (data.message === 'Success') {
+        console.log(data);
+        alert('Book return Successfully');
+        book.reset();
+      } else {
+        console.log(data);
+        alert('Failed To return Book');
+        book.reset();
+      }
+    });
+  }
 }
